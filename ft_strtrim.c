@@ -23,11 +23,15 @@ char	*ft_strtrim(const char *s1, const char *set)
 	const char	*end_p;
 	size_t		len;
 //check if all chars in string are in set - set "a", "aa"; check if 1 char - set "a", "a"
-	end_p = s1 + ft_strlen(s1) - 1;
+	if (ft_strlen(s1) == 0)
+		end_p = s1;
+	else
+		end_p = s1 + ft_strlen(s1) - 1;
 	while (search_str(*s1, set))
 		s1++;
 	while (search_str(*end_p, set))
 		end_p--;
+	//if (
 	len = end_p - s1 + 1;
 	str = (char *) malloc(sizeof(char) * (len + 1));
 	if (str == NULL)

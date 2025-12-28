@@ -13,15 +13,16 @@
 #include <stddef.h>
 #include <stdlib.h>
 
+static char		*ft_strdup(const char *s);
 static size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 static size_t	ft_strlen(const char *s);
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*substr;
-
-	if (start > ft_strlen(s))
-
+//test
+	if ((size_t) start > ft_strlen(s))
+		return (ft_strdup(""));
 	else if (ft_strlen(s + start) < len)
 		len = ft_strlen(s + start);
 	substr = (char *) malloc(sizeof(char) * ++len);
@@ -29,6 +30,21 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		return (NULL);
 	ft_strlcpy(substr, &s[start], len);
 	return (substr);
+}
+
+static char	*ft_strdup(const char *s)
+{
+	char	*str;
+	size_t	strlen;
+
+	strlen = ft_strlen(s);
+	str = (char *) malloc(sizeof(char) * (strlen + 1));
+	if (str == NULL)
+		return (NULL);
+	while (*s)
+		*str++ = *s++;
+	*str = '\0';
+	return (str - strlen);
 }
 
 static size_t	ft_strlcpy(char *dst, const char *src, size_t size)

@@ -1,14 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dale <dale@student.42prague.com>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/29 22:55:23 by dale              #+#    #+#             */
+/*   Updated: 2025/12/29 22:55:25 by dale             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-static t_list	*ft_lstlast(t_list *lst);//redefinition error?
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	ft_lstlast(*lst)->next = new;
-}
-
-static t_list	*ft_lstlast(t_list *lst)
-{
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
 }

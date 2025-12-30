@@ -16,13 +16,15 @@ static size_t	ft_strlen(const char *s);
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	unsigned char	ch;
+	size_t			i;
 
+	ch = c;
 	i = ft_strlen(s);
 	while (i)
-		if (s[i--] == c)
+		if (s[i--] == ch)
 			return ((char *) s + i + 1);
-	if (s[i] == c)
+	if (s[i] == ch)
 		return ((char *) s);
 	return (NULL);
 }

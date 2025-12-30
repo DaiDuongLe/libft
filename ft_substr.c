@@ -20,7 +20,7 @@ static size_t	ft_strlen(const char *s);
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*substr;
-//test
+
 	if ((size_t) start > ft_strlen(s))
 		return (ft_strdup(""));
 	else if (ft_strlen(s + start) < len)

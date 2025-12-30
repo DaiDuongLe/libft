@@ -18,9 +18,10 @@ Extra rules:
 [Libft subject page](https://cdn.intra.42.fr/pdf/pdf/190694/en.subject.pdf)
 
 [makefile tutorial](https://noahloomans.com/tutorials/makefile/)
+[GNU make docs](https://www.gnu.org/software/make/manual/)
 
 [Tests](https://github.com/FranFrau/Supreme-Tester-Libft)
-
++ my own tests
 
 
 # Detailed Description
